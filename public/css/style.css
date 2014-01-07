@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
   color: black;
   background: white;
 
@@ -10,7 +10,17 @@ body {
 }
 
 button {
-  width: 100%
+  width: 100%;
+  height: 40px;
+  font-size: 1em;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: red;
+  border: 0;
+  border-bottom: 2px solid tomato;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px tomato;
+  box-shadow: inset 0 -2px tomato;
 }
 
 .content {
