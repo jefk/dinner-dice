@@ -10,21 +10,36 @@ var dinnerDice = function() {
 
   this.roll = function() {
     this.$foodList.empty();
+    var index = 0
     for (var category in foods) {
+      if (index % 2 == 0) {
+        this.addRow();
+      }
+      index += 1;
       this.addCategory(category);
     }
   };
 
   this.addCategory = function(category) {
-    this.$foodList.append('<li>' + category + '</li>');
-    this.addFoodFrom(category);
+    var $card = $('<div class=card></div>')
+    $card.append('<div class=card-header>' + category + '</div>');
+    $card.append(this.foodElement(category));
+    this.lastRow().append('<div class="col-1-2">' + $card[0].outerHTML + '</div>');
   };
 
-  this.addFoodFrom = function(category) {
+  this.foodElement = function(category) {
     var catFoods = foods[category];
     var food = catFoods[Math.floor(Math.random() * catFoods.length)];
-    this.$foodList.append('<p>' + food + '</p>');
-  }
+    return '<div class="card-body text-shadow">' + food + '</div>';
+  };
+
+  this.addRow = function() {
+    this.$foodList.append('<div class=row></div>');
+  };
+
+  this.lastRow = function (argument) {
+    return this.$foodList.find('.row:last');
+  };
 };
 
 $(document).ready(function() {

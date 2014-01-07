@@ -1,3 +1,9 @@
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   color: black;
@@ -6,23 +12,76 @@ body {
   text-align: center;
   max-width: 800px;
   margin: 0px auto;
-  padding: 20px;
+  padding: 10px;
 }
 
 button {
   width: 100%;
   height: 40px;
   font-size: 1em;
+  font-weight: bold;
   color: white;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-  background: red;
+  background: #3370B2;
   border: 0;
-  border-bottom: 2px solid tomato;
+  border-bottom: 2px solid #71B5FF;
   cursor: pointer;
-  -webkit-box-shadow: inset 0 -2px tomato;
-  box-shadow: inset 0 -2px tomato;
+  -webkit-box-shadow: inset 0 -2px #71B5FF;
+  box-shadow: inset 0 -2px #71B5FF;
+}
+
+h1 {
+  margin: 0;
 }
 
 .content {
   text-align: left;
+}
+
+.row {
+  width: 100%;
+  padding-top: 8px
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+[class*='col-'] {
+  float: left;
+  padding-right: 8px;
+}
+
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+
+.col-1-2 {
+  width: 50%;
+}
+
+.col-1-1 {
+  width: 100%;
+}
+
+.card-header {
+  color: #A4B246;
+  font-weight: bold;
+  padding: 5px;
+  font-size: 0.8em;
+  background-color: #BACC46;
+}
+
+.card-body {
+  color: white;
+  padding: 5px;
+  background-color: #A4B246;
+  font-size: 1.2em;
+  line-height: 58px;
+  height: 72px;
+}
+
+.text-shadow {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
