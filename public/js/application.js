@@ -12,9 +12,9 @@ var dinnerDice = function() {
     this.$foodList.empty();
     var index = 0;
     for (var category in Foods) {
-      if (index % 2 == 0) {
+      // if (index % 2 == 0) {
         this.addRow();
-      }
+      // }
       index += 1;
       this.addCard(category);
     }
@@ -24,7 +24,7 @@ var dinnerDice = function() {
     var foodCardData = {
       category: category,
       foodName: self.randomFoodFrom(category),
-      cardCssClasses: 'col-1-2',
+      cardCssClasses: 'col-1-1',
     };
     var card = Mustache.to_html(Templates.foodCard, foodCardData);
     this.lastRow().append(card);
