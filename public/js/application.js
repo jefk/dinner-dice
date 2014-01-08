@@ -1,5 +1,6 @@
 var dinnerDice = function() {
   var _this = this;
+
   this.$foodList = $('.js-food-list');
 
   this.$rollButton = $('.js-roll-btn');
