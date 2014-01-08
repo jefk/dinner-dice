@@ -10,28 +10,30 @@ var dinnerDice = function() {
 
   this.roll = function() {
     this.$foodList.empty();
-    var index = 0
-    for (var category in foods) {
+    var index = 0;
+    for (var category in Foods) {
       if (index % 2 == 0) {
         this.addRow();
       }
       index += 1;
-      this.addCategory(category);
+      this.addCard(category);
     }
   };
 
-  this.addCategory = function(category) {
-    var $card = $('<div class=card></div>')
-    $card.append('<div class=card-header>' + category + '</div>');
-    $card.append(this.foodElement(category));
-    this.lastRow().append('<div class="col-1-2">' + $card[0].outerHTML + '</div>');
+  this.addCard = function(category) {
+    var foodCardData = {
+      category: category,
+      foodName: self.randomFoodFrom(category),
+      cardCssClasses: 'col-1-2',
+    };
+    var card = Mustache.to_html(Templates.foodCard, foodCardData);
+    this.lastRow().append(card);
   };
 
-  this.foodElement = function(category) {
-    var catFoods = foods[category];
-    var food = catFoods[Math.floor(Math.random() * catFoods.length)];
-    return '<div class="card-body text-shadow">' + food + '</div>';
-  };
+  this.randomFoodFrom = function(category) {
+    var catFoods = Foods[category];
+    return catFoods[Math.floor(Math.random() * catFoods.length)];
+  }
 
   this.addRow = function() {
     this.$foodList.append('<div class=row></div>');
