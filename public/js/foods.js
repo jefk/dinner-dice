@@ -27,6 +27,6 @@ var foods = {
     "Blackstrap molasses", "Honey", "Maple syrup", "Green tea", "Soy sauce", "Miso"
   ],
   "Fat": [
-    "Extra virgin olive oil", "Butter, grass-fed", "Macadamia nut oil", "Avocado oil"
+    "Extra virgin olive oil", "Butter, grass-fed", "Macadamia nut oil", "Avocado oil", "Coconut oil"
   ]
 };
