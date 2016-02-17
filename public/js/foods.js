@@ -1,4 +1,4 @@
-var foods = {
+var Foods = {
   "Meat or something": [
     "Grass-fed beef", "Pasture-raised chicken", "Grass-fed lamb", "Pasture-raised turkey", "Tofu", "Tempeh", "Eggs, pasture-raised", "Cod", "Halibut", "Salmon", "Sardines", "Scallops", "Shrimp", "Tuna"
   ],
